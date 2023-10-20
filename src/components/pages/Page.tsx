@@ -1,6 +1,6 @@
 import React from 'react';
 import {PagesType} from "../../data/dataState";
-import {Navigate, Route, Routes, useLocation, useParams} from "react-router-dom";
+import {Navigate, Route, Routes, useLocation, useNavigate, useParams} from "react-router-dom";
 import {Error404} from "./Error404";
 
 type PropsType = {
@@ -12,6 +12,13 @@ export const Page: React.FC<PropsType> = ({pages}) => {
 
     const location = useLocation()
     console.log(location)
+    const navigate = useNavigate()
+    const onClickBackHandler = () => {
+        navigate(-1)
+    }
+    const onClickHomeHandler = () => {
+        navigate('/page/0')
+    }
 
     return (
         <div>
@@ -20,6 +27,10 @@ export const Page: React.FC<PropsType> = ({pages}) => {
                 ? <div>
                     {pages[Number(params.id)].heading}
                     {pages[Number(params.id)].about}
+                    <div>
+                        <button onClick={onClickBackHandler}>Back</button>
+                        <button onClick={onClickHomeHandler}>Home</button>
+                    </div>
                 </div>
                 //: <Error404/>
                 : <Navigate to={'/page/error'}/>

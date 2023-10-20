@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './Site.module.css'
-import {PageOne} from "./pages/PageOne";
-import {PageTwo} from "./pages/PageTwo";
-import {PageThree} from "./pages/PageThree";
+// import {PageOne} from "./pages/PageOne";
+// import {PageTwo} from "./pages/PageTwo";
+// import {PageThree} from "./pages/PageThree";
 import {Navigate, NavLink, Route, Routes} from 'react-router-dom';
 import {Error404} from "./pages/Error404";
 import {S}  from  './pages/__styles'
